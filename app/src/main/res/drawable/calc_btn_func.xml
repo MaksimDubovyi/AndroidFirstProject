@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <corners
+        android:radius="5px"/>
+
+    <stroke
+android:color="@color/calc_btn_digit_background"
+        android:width="2dp"/>
+    <solid
+        android:color="@color/calc_io_background"/>
+
+</shape>

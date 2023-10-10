@@ -3,6 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="game_title_background">#EACA5E</color>
+    <color name="game_title_foreground">#FFFFFF</color>
+
+    <color name="game_score_background">#3D3A33</color>
+    <color name="game_score_foreground">#FFFFFF</color>
+    <color name="game_table_background">#3D485E</color>
+    <color name="game_btn_background">#1C253A</color>
+    <color name="game_btn_border">#0D0C10</color>
+    <color name="game_btn_txt">#586102</color>
+
     <color name="calc_background">#202020</color>
     <color name="calc_expression_text">#9B9B9B</color>
     <color name="calc_result_text">#FEFEFE</color>

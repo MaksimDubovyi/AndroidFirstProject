@@ -19,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
         //Робота з елементами UI (Views) - тільки після setContentView
 
         tvTitle = findViewById(R.id.main_tv_title);
+
         Button btnViews = findViewById(R.id.main_btn_views);
         btnViews.setOnClickListener(this::btnViewsClick);
 
         Button btnCalc = findViewById(R.id.main_btn_calc);
         btnCalc.setOnClickListener(this::btnCalcClick);
+
+        findViewById( R.id.main_btn_2048 ).setOnClickListener( this::btnGameClick );
     }
     //Обробники подій мають однаковий прототип
     private void btnViewsClick(View view)
@@ -36,5 +39,11 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent=new Intent(this.getApplicationContext(),CalkActivity.class);
         startActivity(intent);
+    }
+    private void btnGameClick( View view ) {  // view - sender
+        Intent intent = new Intent(
+                this.getApplicationContext(),
+                GameActivity.class ) ;
+        startActivity( intent );
     }
 }

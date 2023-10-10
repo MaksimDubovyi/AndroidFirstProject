@@ -29,6 +29,27 @@
         <item name="android:layout_weight">1</item>
     </style>
 
+    <style name="game_table">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginVertical">100dp</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/game_table_background</item>
+    </style>
+
+    <style name="game_table_row">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="game_btn" parent="calc_btn">
+        <item name="android:background">@drawable/game_btn</item>>
+        <item name="android:gravity">center</item>>
+        <item name="android:textStyle">bold</item>>
+        <item name="android:textColor">@color/game_btn_txt</item>>
+
+    </style>
 
 </resources>
 

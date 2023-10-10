@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/game_layout"
+    android:orientation="vertical"
+    tools:context=".GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/game_title_foreground"
+            android:background="@color/game_title_background"
+            android:text="@string/game_tv_title"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:textColor="@color/game_score_foreground"
+                android:background="@color/game_score_background"
+                android:text="SCORE\n520"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:text="Нова"
+                android:backgroundTint="@null"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="5dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:textColor="@color/game_score_foreground"
+                android:background="@color/game_score_background"
+                android:text="SCORE\n520"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:text="Нова"
+                android:backgroundTint="@null"/>
+        </LinearLayout>
+
+       </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/game_tv_hint"
+        android:textAlignment="center"/>
+
+    <TableLayout
+        style="@style/game_table"
+        >
+    <TableRow  style="@style/game_table_row"   >
+
+         <TextView
+             android:id="@+id/game_btn_1"
+             android:text="@string/game_btn_1"
+             style="@style/game_btn"
+             />
+        <TextView
+            android:id="@+id/game_btn_2"
+            android:text="@string/game_btn_2"
+            style="@style/game_btn"
+            />
+        <TextView
+            android:id="@+id/game_btn_3"
+            android:text="@string/game_btn_3"
+            style="@style/game_btn"
+            />
+        <TextView
+            android:id="@+id/game_btn_4"
+            android:text="@string/game_btn_4"
+
+            style="@style/game_btn"
+            />
+    </TableRow>
+        <TableRow  style="@style/game_table_row"   >
+
+            <TextView
+                android:id="@+id/game_btn_5"
+                android:text="@string/game_btn_5"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_6"
+                android:text="@string/game_btn_6"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_7"
+                android:text="@string/game_btn_7"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_8"
+                android:text="@string/game_btn_8"
+
+                style="@style/game_btn"
+                />
+        </TableRow>
+        <TableRow  style="@style/game_table_row"   >
+
+            <TextView
+                android:id="@+id/game_btn_9"
+                android:text="@string/game_btn_9"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_10"
+                android:text="@string/game_btn_10"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_11"
+                android:text="@string/game_btn_11"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_12"
+                android:text="@string/game_btn_12"
+
+                style="@style/game_btn"
+                />
+        </TableRow>
+        <TableRow  style="@style/game_table_row"   >
+
+            <TextView
+                android:id="@+id/game_btn_13"
+                android:text="@string/game_btn_13"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_14"
+                android:text="@string/game_btn_14"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_15"
+                android:text="@string/game_btn_15"
+                style="@style/game_btn"
+                />
+            <TextView
+                android:id="@+id/game_btn_16"
+                android:text="@string/game_btn_16"
+
+                style="@style/game_btn"
+                />
+        </TableRow>
+    </TableLayout>
+
+
+
+</LinearLayout>

@@ -47,22 +47,5 @@
     <string name="game_tv_title">2048</string>
     <string name="game_tv_hint">Поєднуйте числа щоб одержати 2048</string>
 
-    <string name="game_btn_1">1</string>
-    <string name="game_btn_2">2</string>
-    <string name="game_btn_3">3</string>
-    <string name="game_btn_4">4</string>
-    <string name="game_btn_5">5</string>
-    <string name="game_btn_6">6</string>
-    <string name="game_btn_7">7</string>
-    <string name="game_btn_8">8</string>
-    <string name="game_btn_9">9</string>
-    <string name="game_btn_10">10</string>
-    <string name="game_btn_11">11</string>
-    <string name="game_btn_12">12</string>
-    <string name="game_btn_13">13</string>
-    <string name="game_btn_14">14</string>
-    <string name="game_btn_15">15</string>
-    <string name="game_btn_16">16</string>
 
-    game_btn_1
 </resources>

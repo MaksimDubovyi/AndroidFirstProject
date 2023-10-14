@@ -47,5 +47,8 @@
     <string name="game_tv_title">2048</string>
     <string name="game_tv_hint">Поєднуйте числа щоб одержати 2048</string>
 
+    <string name="game_toast_no_move">Немає руху</string>
+    <string name="game_tv_score">РАХУНОК\n%d</string>
+    <string name="game_checkbox_sound">звук</string>
 
 </resources>

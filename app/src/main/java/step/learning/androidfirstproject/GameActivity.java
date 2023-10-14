@@ -5,9 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.MediaParser;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -27,13 +32,39 @@ public class GameActivity extends AppCompatActivity {
     private int scoreMax= random.nextInt(1000);;
     private TextView tvScoreMax;
     private TextView tvScoreNow;
+    private Animation spawnCellAnimation;
+    private Animation collapseCellsAnimation;
+    private MediaPlayer spawnSound;
+    private MediaPlayer collapseSound;
+    private MediaPlayer SoundScore100;
+    private MediaPlayer NoSwipeSound;
+    private CheckBox checkBox;
+    private  boolean collapse;
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        NoSwipeSound = MediaPlayer.create( GameActivity.this, R.raw.skibidi_toilet3 ) ;
+        spawnSound = MediaPlayer.create( GameActivity.this, R.raw.skibidi_toilet2 ) ;
+        collapseSound = MediaPlayer.create( GameActivity.this, R.raw.skibidi_toilet1 ) ;
+        SoundScore100 = MediaPlayer.create( GameActivity.this, R.raw.skibidi_toilet ) ;
 
+        checkBox = findViewById(R.id.game_checkbox_sound);
+
+            // завантажуємо анімацію
+        spawnCellAnimation= AnimationUtils.loadAnimation(
+                GameActivity.this, R.anim.game_spawn_cell
+        );
+            // ініціалізуємо анімацію
+        spawnCellAnimation.reset();
+        // завантажуємо анімацію
+        collapseCellsAnimation= AnimationUtils.loadAnimation(
+                GameActivity.this, R.anim.game_collapse_cells
+        );
+        // ініціалізуємо анімацію
+        collapseCellsAnimation.reset();
 
         // Збираємо посилання на комірки ігрового поля
         for (int i = 0; i < N; i++) {
@@ -47,7 +78,6 @@ public class GameActivity extends AppCompatActivity {
             }
         }
 
-
         tvScoreNow =  findViewById(getResources().getIdentifier("score_now", "id", getPackageName() ));
         tvScoreMax =  findViewById(getResources().getIdentifier("score_max", "id", getPackageName() ));
 
@@ -59,32 +89,58 @@ public class GameActivity extends AppCompatActivity {
             layoutParams.setMargins( 7, 50, 7, 50 );
             tableLayout.setLayoutParams( layoutParams ) ;
         } ) ;
-
         tableLayout.setOnTouchListener(new OnSwipeLisner(GameActivity.this) {
             @Override
             public void onSwipeBottom() {
-                Toast.makeText(  /// Повідомлення що зявляється та зникає  з часом
-                        GameActivity.this,
-                        "onSwipeBottom",
-                        Toast.LENGTH_SHORT // час відображення повідомлення
-                ).show();
+                if(moveBottom())
+                {
+                    spawnCell();
+                    showField();
+                }
+                else {
+                    NoSwipeSound.start();
+                    Toast.makeText(GameActivity.this, "Немає руху", Toast.LENGTH_SHORT).show();
+                }
             }
-
             @Override
             public void onSwipeLeft() {
-                Toast.makeText(GameActivity.this, "onSwipeLeft", Toast.LENGTH_SHORT).show();
-            }
+                if(moveLeft())
+                {
+                    spawnCell();
+                    showField();
+                }
+                else {
+                    NoSwipeSound.start();
+                    Toast.makeText(GameActivity.this, "Немає руху", Toast.LENGTH_SHORT).show();
+                }
 
+            }
             @Override
             public void onSwipeRight() {
-                Toast.makeText(GameActivity.this, "onSwipeRight", Toast.LENGTH_SHORT).show();
+                if(moveRight())
+                {
+                    spawnCell();
+                    showField();
+                }
+                else {
+                    NoSwipeSound.start();
+                    Toast.makeText(GameActivity.this, "Немає руху", Toast.LENGTH_SHORT).show();
+                }
             }
-
             @Override
             public void onSwipeTop() {
-                Toast.makeText(GameActivity.this, "onSwipeTop", Toast.LENGTH_SHORT).show();
+                if(moveTop())
+                {
+                    spawnCell();
+                    showField();
+                }
+                else {
+                    NoSwipeSound.start();
+                    Toast.makeText(GameActivity.this, "Немає руху", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
         spawnCell();
         spawnCell();
         showField();
@@ -118,7 +174,7 @@ public class GameActivity extends AppCompatActivity {
         //Вилучаємо зібраний індекс комірки
         int randCellIndex = freeCellIndexes.get(randIndex);
         //розділяємо його на координати
-        int x = randIndex / 10;
+        int x = randCellIndex / 10;
         int y = randCellIndex % 10;
 
         // генеруємо випадкове число : 2 (з імовірністю 0,9) чи 4 (0,1)
@@ -126,6 +182,25 @@ public class GameActivity extends AppCompatActivity {
                 random.nextInt(10) == 0 //щдин з 10
                         ? 4  // цей блок з імовірністю 1/10
                         : 2; // цей всі інші випадки
+        //призначаємо анімацію появи для View комірки
+        tvCells[x][y].startAnimation(spawnCellAnimation);
+        //програємо звук
+        if(checkBox.isChecked())
+        {
+            if( collapse==true)
+            {
+                collapseSound.start();
+                if(scoreNow>100&&scoreNow<180 ||scoreNow>500&&scoreNow<600 ||scoreNow>1000&&scoreNow<1100
+                        ||scoreNow>1500&&scoreNow<1600 ||scoreNow>2000&&scoreNow<2100 ||scoreNow>2500&&scoreNow<2600)
+                {
+                    SoundScore100.start();
+                }
+            }
+            else {
+                spawnSound.start();
+            }
+        }
+
         return true;
     }
 
@@ -166,23 +241,154 @@ public class GameActivity extends AppCompatActivity {
             }
         }
 
-
-          if(scoreNow>scoreMax)
-            {
-                String strNow=String.valueOf( scoreNow );
-                tvScoreMax.setText( "Score Max\n"+strNow );
-                tvScoreNow.setText( "Score Now\n"+strNow );
-            }
-          else {
-              String strMax=String.valueOf( scoreMax );
-              String strNow=String.valueOf( scoreNow );
-              tvScoreMax.setText( "Score Max\n"+strMax );
-              tvScoreNow.setText( "Score Now\n"+strNow );
-          }
-
-
-
-
-
+        // Resource with placeholder (%d in resource
+        tvScoreNow.setText( getString(R.string.game_tv_score,scoreNow) );
     }
+
+
+    private boolean moveRight() {
+        boolean result = false;
+        collapse =false;
+        // все переміщуємо ліворуч
+        boolean needRepeat;
+        for (int i = 0; i < N; i++) {
+            do {
+                needRepeat = false;
+                for (int j = N - 1; j > 0; j--) {
+                    if (cells[i][j] == 0 && cells[i][j - 1] != 0) {
+                        cells[i][j] = cells[i][j - 1];
+                        cells[i][j - 1] = 0;
+                        needRepeat = true;
+                        result = true;
+                    }
+                }
+            } while (needRepeat);
+            for (int j = N - 1; j > 0; j--) {
+                if (cells[i][j] != 0 && cells[i][j] == cells[i][j - 1]) {
+                    collapse=true;
+                    cells[i][j] *= 2;
+                    //Animation
+                    tvCells[i][j].startAnimation(collapseCellsAnimation);
+                    scoreNow += cells[i][j];
+                    for (int k = j - 1; k > 0; k--) {
+                        cells[i][k] = cells[i][k - 1];
+                    }
+                    cells[i][0] = 0;
+                    result = true;
+                }
+            }
+        }
+        return result;
+    }
+    private boolean moveLeft() {
+        collapse=false;
+        boolean result = false;
+        // все переміщуємо ліворуч
+        boolean needRepeat;
+        for (int i = 0; i < N; i++) {
+            do {
+                needRepeat = false;
+                for (int j = 0; j < N - 1; j++) {
+                    if (cells[i][j] == 0 && cells[i][j + 1] != 0) {
+                        cells[i][j] = cells[i][j + 1];
+                        cells[i][j + 1] = 0;
+                        needRepeat = true;
+                        result = true;
+                    }
+                }
+            } while (needRepeat);
+            for (int j = 0; j < N - 1; j++) {
+                if (cells[i][j] != 0 && cells[i][j] == cells[i][j + 1]) {
+                    collapse=true;
+                    cells[i][j] *= 2;
+                    //Animation
+                    tvCells[i][j].startAnimation(collapseCellsAnimation);
+                    scoreNow += cells[i][j];
+                    for (int k = j + 1; k < N - 1; k++) {
+                        cells[i][k] = cells[i][k + 1];
+                    }
+                    cells[i][N - 1] = 0;
+                    result = true;
+                }
+            }
+        }
+        //перевіряемо
+        //переміщуємо ліворуч
+        return result;
+    }
+    private boolean moveTop() {
+        collapse=false;
+        boolean result = false;
+        boolean needRepeat;
+        for (int j = 0; j < N; j++) {
+            do {
+                needRepeat = false;
+                for (int i = 0; i < N - 1; i++) {
+                    if (cells[i][j] == 0 && cells[i + 1][j] != 0) {
+                        cells[i][j] = cells[i + 1][j];
+                        cells[i + 1][j] = 0;
+                        needRepeat = true;
+                        result = true;
+                    }
+                }
+            } while (needRepeat);
+            for (int i = 0; i < N - 1; i++) {
+                if (cells[i][j] != 0 && cells[i][j] == cells[i + 1][j]) {
+                    collapse=true;
+                    cells[i][j] *= 2;
+                    //Animation
+                    tvCells[i][j].startAnimation(collapseCellsAnimation);
+                    scoreNow += cells[i][j];
+                    for (int k = j + 1; k < N - 1; k++) {
+                        cells[k][j] = cells[k + 1][j];
+                    }
+                    cells[N - 1][j] = 0;
+                    result = true;
+                }
+            }
+        }
+        return result;
+    }
+    private boolean moveBottom() {
+        collapse=false;
+        boolean result = false;
+        boolean needRepeat;
+        for (int j = 0; j < N; j++) {
+            do {
+                needRepeat = false;
+                for (int i = N - 1; i > 0; i--) {
+                    if (cells[i][j] == 0 && cells[i - 1][j] != 0) {
+                        cells[i][j] = cells[i - 1][j];
+                        cells[i - 1][j] = 0;
+                        needRepeat = true;
+                        result = true;
+                    }
+                }} while (needRepeat);
+            for (int i = N - 1; i > 0; i--) {
+                if (cells[i][j] != 0 && cells[i][j] == cells[i - 1][j]) {
+                    collapse=true;
+                    cells[i][j] *= 2;
+                    tvCells[i][j].startAnimation(collapseCellsAnimation);
+                    scoreNow += cells[i][j];
+                    for (int k = i - 1; k > 0; k--) {
+                        cells[k][j] = cells[k - 1][j];
+                    }
+                    cells[0][j] = 0;
+                    result = true;
+                }
+            }
+        }
+        return result;
+    }
+
 }
+
+/*
+Анімації (double-anim) - плавні переходи числових параметрів
+між початковим та кінцевим значеннями. Закладаються декларативно (у xml)
+та проробляються ОС.
+Створюємо ресурсну папку (anim, назва важлива)
+у ній - game_spawn_cell.xml (див. коментарі у ньому)
+Завантажуємо анімацію (onCreate)  та ініціалізуємо її
+Призначаємо (викликаємо) анімацію при появі комірки (див. spawnCell)
+ */

@@ -10,6 +10,7 @@ import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class CalkActivity extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class CalkActivity extends AppCompatActivity {
     private  String operator2;
     private String operand1;
     private String operand2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+android:fromXScale="1.0"
+    android:fromYScale="1.0"
+    android:toXScale="1.2"
+    android:toYScale="1.2"
+    android:duration="500"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatMode="reverse"
+    android:repeatCount="1"
+    />
+
+<!-- scale анімація маштабу  (збільшення - зменшення)
+
+repeatMode- для повторення (restart - почати заново [default] reverse-плавно повертатись).
+цей режим впливає на розуміння
+repeatCount (restart- кількість програвань анімації,
+reverse- кількість напів програвань, окрім основного)
+
+Для деяких анімацій додається поняття pivot - нерухомуї точки
+За замовчуваням -0,0
+**      ****
+**->    ****
+        ****
+        ****
+ 50%
+        ****
+**      ****
+**->    ****
+        ****
+-->

@@ -82,7 +82,7 @@ public class OnSwipeLisner implements View.OnTouchListener {
                     result=true;    // e1.Y
                     if(distanceY>0) // e2.Y ...->...e1.Y
                     {
-                        onSwipeBottom();onSwipeRight();
+                        onSwipeBottom();
                     }
                     else {
                         onSwipeTop();

@@ -14,6 +14,12 @@
     <color name="game_btn_border">#0D0C10</color>
     <color name="game_btn_txt">#586102</color>
 
+    <color name="game_bt_n_foreground">#F60A0A</color>
+    <color name="game_bt_n_background">#FFFFFF</color>
+    <color name="save_game_background">#1168EC</color>
+    <color name="load_game_background">#F6DE07</color>
+    <color name="game_over_undo_background">#08601B</color>
+
     <color name="table_background">#052585</color>
     <color name="game_bg_0">#8BC34A</color>
     <color name="game_fg_0">#8BC34A</color>
@@ -35,6 +41,7 @@
     <color name="game_fg_256">#F8F6F3</color>
     <color name="game_bg_512">#1A423E</color>
     <color name="game_fg_512">#F8F6F3</color>
+
 
     <color name="calc_background">#202020</color>
     <color name="calc_expression_text">#9B9B9B</color>

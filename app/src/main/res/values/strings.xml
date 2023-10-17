@@ -49,6 +49,17 @@
 
     <string name="game_toast_no_move">Немає руху</string>
     <string name="game_tv_score">РАХУНОК\n%d</string>
+    <string name="game_tv_best">РЕКОРД\n%d</string>
     <string name="game_checkbox_sound">звук</string>
 
+    <string name="game_over">Немає ходу</string>
+    <string name="game_over_dialog">Гра провалена.\nПочати нову?</string>
+    <string name="game_over_yes">Так</string>
+    <string name="game_over_undo">Хід назад</string>
+    <string name="game_over_no">Ні</string>
+    <string name="game_start_new_game">Нова гра!</string>
+    <string name="game_load">Відновити</string>
+    <string name="game_save">Зберегти</string>
+    <string name="game_finish_title">Вітаємо Ви зібрали 2048</string>
+    <string name="game_finish_message">Бажаєте продовжити?</string>
 </resources>

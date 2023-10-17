@@ -32,18 +32,21 @@
             android:layout_marginStart="7dp"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/score_now"
+                android:id="@+id/game_tv_score"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:background="@color/game_score_background"
                 android:textColor="@color/game_title_foreground"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="SCORE\n520"/>
             <Button
+                android:id="@+id/game_btn_new_game"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="3"
+                android:background="@drawable/game_btn_shape"
                 android:text="Нова"
                 app:backgroundTint="@null"/>
         </LinearLayout>
@@ -54,7 +57,7 @@
             android:layout_marginStart="7dp"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/score_max"
+                android:id="@+id/game_tv_best_score"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="4"
@@ -63,10 +66,13 @@
                 android:gravity="center"
                 android:text="SCORE\n520"/>
             <Button
+                android:id="@+id/game_btn_undo"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="3"
-                android:text="Нова"
+                android:background="@drawable/game_btn_undo"
+                android:text="@string/game_over_undo"
+
                 app:backgroundTint="@null"/>
         </LinearLayout>
     </LinearLayout>
@@ -75,20 +81,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/game_tv_hint"
+        android:textSize="20sp"
         android:textAlignment="center"/>
-    <CheckBox
-        android:id="@+id/game_checkbox_sound"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/game_checkbox_sound"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="20dp"
-        android:textSize="10sp"
-        android:checked="false"
-        android:buttonTint="@color/game_table_background"
-        android:textColor="@color/game_score_background"
-        />
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/game_checkbox_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_checkbox_sound"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5dp"
+            android:textSize="10sp"
+            android:checked="false"
+            android:buttonTint="@color/game_table_background"
+            android:textColor="@color/game_score_background"
+            />
+
+        <Button
+            android:id="@+id/save_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/game_btn_save"
+            android:layout_marginHorizontal="5dp"
+            android:text="@string/game_save"
+            android:textColor="@color/load_game_background"
+            android:textColorHighlight="@color/black"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+
+
+        <Button
+            android:id="@+id/load_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/game_btn_load"
+            android:text="@string/game_load"
+            android:textColor="@color/save_game_background"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -98,9 +138,9 @@
         <TableLayout
             android:id="@+id/game_table"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:layout_marginVertical="60dp"
+            android:layout_marginVertical="10dp"
             android:background="@color/table_background"
             android:padding="6dp">
 
@@ -209,4 +249,7 @@
             </TableRow>
         </TableLayout>
     </LinearLayout>
+
+
+
 </LinearLayout>

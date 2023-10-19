@@ -1,57 +1,52 @@
 <resources>
     <string name="app_name">AndroidFirstProject</string>
 
+
     <string name="main_tv_title">Знайомство з Android</string>
     <string name="main_btn_views">Елементи UI</string>
     <string name="main_btn_calc">Калькулятор</string>
     <string name="main_btn_2048">2048</string>
+    <string name="main_btn_rates">Rates</string>
 
     <string name="views_tv_title">Елементи UI (Views)</string>
     <string name="views_tv_linear_layout_horizontal">LinearLayout:horizontal</string>
 
-
+    <!--region Calc-->
     <string name="calc_tv_title">Калькулятор</string>
     <string name="calc_btn_percent">%</string>
     <string name="calc_btn_ce">CE</string>
     <string name="calc_btn_c">C</string>
     <string name="calc_btn_backspace">\u232B</string>
-
     <string name="calc_btn_inverse">\u00B9/\u2093</string>
     <string name="calc_btn_square">x\u00B2</string>
     <string name="calc_btn_sqrt">\u221A\u2093\u0304</string>
     <string name="calc_btn_divide">\u00F7</string>
-
     <string name="calc_btn_7">7</string>
     <string name="calc_btn_8">8</string>
     <string name="calc_btn_9">9</string>
     <string name="calc_btn_multiply">x</string>
-
     <string name="calc_btn_4">4</string>
     <string name="calc_btn_5">5</string>
     <string name="calc_btn_6">6</string>
     <string name="calc_btn_minus">\u2212</string>
-
     <string name="calc_btn_1">1</string>
     <string name="calc_btn_2">2</string>
     <string name="calc_btn_3">3</string>
     <string name="calc_btn_plus">+</string>
-
     <string name="calc_btn_plus_minus">+/_</string>
     <string name="calc_btn_0">\u2205</string>
     <string name="calc_btn_comma">,</string>
     <string name="calc_btn_equal">=</string>
-
     <string name="calc_div_zero_message">Cannot divide by zero</string>
 
-
+    <!--endregion-->
+    <!--region 2048-->
     <string name="game_tv_title">2048</string>
-    <string name="game_tv_hint">Поєднуйте числа щоб одержати 2048</string>
-
+    <string name="game_tv_hint">Синочок Поєднуйте числа щоб одержати 2048</string>
     <string name="game_toast_no_move">Немає руху</string>
     <string name="game_tv_score">РАХУНОК\n%d</string>
     <string name="game_tv_best">РЕКОРД\n%d</string>
     <string name="game_checkbox_sound">звук</string>
-
     <string name="game_over">Немає ходу</string>
     <string name="game_over_dialog">Гра провалена.\nПочати нову?</string>
     <string name="game_over_yes">Так</string>
@@ -62,4 +57,9 @@
     <string name="game_save">Зберегти</string>
     <string name="game_finish_title">Вітаємо Ви зібрали 2048</string>
     <string name="game_finish_message">Бажаєте продовжити?</string>
+    <!--endregion-->
+    <!--Rates-->
+    <string name="rates_ex_thread">Відкриття з\'єднання з UI (основного) потоку</string>
+
+    <!--endregion-->
 </resources>

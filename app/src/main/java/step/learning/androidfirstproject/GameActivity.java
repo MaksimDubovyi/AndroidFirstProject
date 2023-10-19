@@ -110,11 +110,7 @@ public class GameActivity extends AppCompatActivity {
         // Збираємо посилання на комірки ігрового поля
         for( int i = 0; i < N; i++ ) {
             for( int j = 0; j < N; j++ ) {
-                tvCells[i][j] = findViewById(
-                        getResources().getIdentifier(
-                                "game_cell_" + i + j,
-                                "id",
-                                getPackageName()
+                tvCells[i][j] = findViewById( getResources().getIdentifier( "game_cell_" + i + j,"id",getPackageName()
                         )
                 ) ;
             }
@@ -667,7 +663,7 @@ public class GameActivity extends AppCompatActivity {
         for (int i = 0; i < N; i++) {
 
                 for (int j = 0; j < N; j++) {
-                    if (cells[i][j] ==16) {
+                    if (cells[i][j] ==2048) {
                         finish=true;
                         showFinishGame();
                         showFinishGameDialog();
@@ -705,9 +701,6 @@ public class GameActivity extends AppCompatActivity {
         RIGHT,
         TOP
     }
-
-
-
 
 }
 /*

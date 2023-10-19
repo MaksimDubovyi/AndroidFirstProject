@@ -40,9 +40,7 @@ public class CalkActivity extends AppCompatActivity {
 
         for(int i=0;i<MAX_DIGITS;i++)
         {
-            findViewById(
-            getResources().getIdentifier(
-                    "calc_btn_"+i,"id",getPackageName()
+            findViewById( getResources().getIdentifier("calc_btn_"+i,"id",getPackageName()
             )).setOnClickListener(this::digitClick);
         }
 

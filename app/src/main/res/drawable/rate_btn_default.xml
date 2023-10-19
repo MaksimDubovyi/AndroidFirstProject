@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:shape="rectangle">
     <corners
         android:radius="20dp"/>
 
     <stroke
-        android:color="@color/black"
+        android:color="@color/rate_btn_fr_default"
         android:width="2dp"/>
     <solid
-        android:color="@color/calc_btn_digit_background"/>
+        android:color="@color/rate_btn_default"/>
 
 </shape>

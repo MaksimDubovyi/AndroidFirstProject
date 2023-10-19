@@ -55,4 +55,13 @@
 
 
     <color name="calc_io_background">#BB5A2B</color>
+
+
+    <!--region Rate-->
+    <color name="rate_btn_default">#2A2B2E</color>
+    <color name="rate_btn_fr_default">#FFFFFF</color>
+
+    <color name="rate_btn_choice">#0766F4</color>
+    <color name="rate_btn_fr_choice">#FFEB3B</color>
+    <!--endregion-->
 </resources>

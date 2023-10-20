@@ -60,6 +60,11 @@
     <!--endregion-->
     <!--Rates-->
     <string name="rates_ex_thread">Відкриття з\'єднання з UI (основного) потоку</string>
+    <string name="rates_btn_alpha">назвою</string>
+    <string name="rates_btn_rate">курсом</string>
+    <string name="rates_btn_cc">кодом</string>
+    <string name="rates_btn_search">Пошук</string>
+    <string name="rates_btn_title">Сортувати за: </string>
 
     <!--endregion-->
 </resources>

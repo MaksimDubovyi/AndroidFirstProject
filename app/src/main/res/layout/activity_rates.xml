@@ -6,31 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".RatesActivity">
 
-    <TextView
+    <LinearLayout
         android:id="@+id/rates_tv_json"
-        android:layout_width="match_parent"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="175dp"
+
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.01">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/rates_btn_title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/rates_tv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/rates_btn_cc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/game_btn_save"
+                android:text="@string/rates_btn_cc"
+                android:textColor="@color/load_game_background"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/rates_btn_alpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/game_btn_save"
+                android:text="@string/rates_btn_alpha"
+                android:textColor="@color/load_game_background"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/rates_btn_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/game_btn_save"
+                android:text="@string/rates_btn_rate"
+                android:textColor="@color/load_game_background"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rates_tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/game_btn_load"
+                android:hint="@string/rates_btn_search"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
 
     <ScrollView
 
-        android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_width="378dp"
+        android:layout_height="479dp"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rates_tv_json" >
+        app:layout_constraintTop_toBottomOf="@+id/rates_tv_json">
 
         <LinearLayout
             android:id="@+id/rates_container"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
 
     </ScrollView>
 

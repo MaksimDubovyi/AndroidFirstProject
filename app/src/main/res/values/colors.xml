@@ -63,5 +63,9 @@
 
     <color name="rate_btn_choice">#0766F4</color>
     <color name="rate_btn_fr_choice">#FFEB3B</color>
+
+    <color name="rate_btn_1">#97EDE0</color>
+    <color name="rate_btn_2">#EFDFA9</color>
+
     <!--endregion-->
 </resources>

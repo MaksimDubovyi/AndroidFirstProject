@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.main_btn_rates).setOnClickListener(this::btnRatesClick);
 
         findViewById( R.id.main_btn_2048 ).setOnClickListener( this::btnGameClick );
+        findViewById( R.id.main_btn_chat ).setOnClickListener( this::btnChatClick );
     }
     //Обробники подій мають однаковий прототип
     private void btnViewsClick(View view)
@@ -49,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void btnRatesClick( View view ) {  // view - sender
         Intent intent = new Intent( this.getApplicationContext(), RatesActivity.class ) ;
+        startActivity( intent );
+    }
+    private void btnChatClick( View view ) {  // view - sender
+        Intent intent = new Intent( this.getApplicationContext(), ChatActivity.class ) ;
         startActivity( intent );
     }
 }

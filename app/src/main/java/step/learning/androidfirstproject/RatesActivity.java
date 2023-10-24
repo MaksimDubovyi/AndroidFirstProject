@@ -199,7 +199,8 @@ public class RatesActivity extends AppCompatActivity {
         nbuRateResponse.getRates().sort(Comparator.comparing(NbuRate::getRate));
 
         showResponse();
-    }  private void byCcClick(View view)
+    }
+    private void byCcClick(View view)
     {
         if(nbuRateResponse==null||nbuRateResponse.getRates()==null)
         {

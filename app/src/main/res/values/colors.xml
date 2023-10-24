@@ -68,4 +68,10 @@
     <color name="rate_btn_2">#EFDFA9</color>
 
     <!--endregion-->
+
+    <!--region Rate-->
+    <color name="chat_card_message_name">#073108</color>
+    <color name="chat_card_message_date">#05379A</color>
+
+    <!--endregion-->
 </resources>

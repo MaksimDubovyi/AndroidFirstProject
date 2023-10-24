@@ -67,4 +67,7 @@
     <string name="rates_btn_title">Сортувати за: </string>
 
     <!--endregion-->
+    <!--Chat-->
+    <string name="main_btn_chat">Чат</string>
+    <!--endregion-->
 </resources>

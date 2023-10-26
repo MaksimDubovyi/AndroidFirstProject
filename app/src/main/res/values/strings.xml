@@ -69,5 +69,13 @@
     <!--endregion-->
     <!--Chat-->
     <string name="main_btn_chat">Чат</string>
+    <string name="chat_tv_nik">Нік у Чаті:</string>
+    <string name="chat_et_nik">Max</string>
     <!--endregion-->
+
+    <!--RentCar-->
+    <string name="main_btn_rent_car">Rent Car 2023</string>
+    <!--endregion-->
+
+
 </resources>

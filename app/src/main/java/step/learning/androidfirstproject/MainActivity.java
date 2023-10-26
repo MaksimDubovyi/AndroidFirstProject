@@ -30,11 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById( R.id.main_btn_2048 ).setOnClickListener( this::btnGameClick );
         findViewById( R.id.main_btn_chat ).setOnClickListener( this::btnChatClick );
+        findViewById( R.id.main_btn_rent_car ).setOnClickListener( this::btnRentCarClick );
     }
     //Обробники подій мають однаковий прототип
     private void btnViewsClick(View view)
     {
         Intent intent=new Intent(this.getApplicationContext(),ViewsActivity.class);
+        startActivity(intent);
+    }
+    private void btnRentCarClick(View view)
+    {
+        Intent intent=new Intent(this.getApplicationContext(),ren_car_Activity.class);
         startActivity(intent);
     }
 

@@ -1,0 +1,55 @@
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <alpha-->
+<!--        android:fromAlpha="0"-->
+<!--        android:toAlpha="1"-->
+<!--        android:duration="1300"-->
+<!--        android:repeatMode="reverse"-->
+<!--        android:repeatCount="2"-->
+<!--        />-->
+
+    <!-- Анімація нахилу вліво -->
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="-10"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="250"
+        android:startOffset="500"
+        android:repeatMode="reverse"
+        android:repeatCount="4"
+        />
+
+    <!-- Анімація нахилу вправо -->
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="10"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="250"
+        android:startOffset="750" />
+
+</set>
+
+
+   <!--
+fromAlpha: Вказує початкову прозорість (від 0 - повністю прозорий, до 1 - повністю видимий).
+toAlpha: Вказує кінцеву прозорість.
+duration: Тривалість анімації в мілісекундах.
+repeatMode: Вказує режим повторення анімації. У вас встановлено "reverse," що означає, що анімація буде повторюватися в оберненому порядку.
+repeatCount: Вказує кількість повторень анімації. У вас встановлено "2," що означає, що анімація буде відтворена двічі.
+<rotate> - Анімація обертання об'єкта.
+
+fromDegrees: Вказує початковий кут обертання в градусах.
+toDegrees: Вказує кінцевий кут обертання в градусах.
+pivotX та pivotY: Вказують точку, навколо якої об'єкт буде обертатися. У вас встановлено центральну точку (50% по горизонталі та вертикалі).
+duration: Тривалість анімації в мілісекундах.
+startOffset: Затримка перед початком анімації в мілісекундах.
+repeatMode: Режим повторення анімації. У вас встановлено "reverse," що означає обертання в оберненому напрямку.
+repeatCount: Кількість повторень анімації. У вас встановлено "6," що означає, що анімація буде відтворена шість разів.
+
+   -->
+
+
+
+

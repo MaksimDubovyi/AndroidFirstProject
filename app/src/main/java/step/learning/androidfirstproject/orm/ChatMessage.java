@@ -3,11 +3,29 @@ package step.learning.androidfirstproject.orm;
 import org.json.JSONObject;
 
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ChatMessage {
     public String id;
     public String author;
     public String text;
+
+    public String moment;
+    private final static SimpleDateFormat sqlDateFormat =
+            new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.UK);
+    public Date getDate()
+    {
+        try
+        {
+            return sqlDateFormat.parse(getMoment());
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
 
     public static ChatMessage fromJson(JSONObject jsonObject)
     {
@@ -61,6 +79,6 @@ public class ChatMessage {
         this.moment = moment;
     }
 
-    public String moment;
+
 
 }

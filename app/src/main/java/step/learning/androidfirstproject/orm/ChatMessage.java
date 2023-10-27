@@ -1,5 +1,7 @@
 package step.learning.androidfirstproject.orm;
 
+import android.view.View;
+
 import org.json.JSONObject;
 
 import java.lang.reflect.Field;
@@ -11,8 +13,9 @@ public class ChatMessage {
     public String id;
     public String author;
     public String text;
-
     public String moment;
+
+    transient   private View view; //посилання на представлення даного повідомлення (transient - це для того щоб яко потрібно сеарелізувати то помітили це поле що його не потрібно )
     private final static SimpleDateFormat sqlDateFormat =
             new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.UK);
     public Date getDate()
@@ -46,6 +49,13 @@ public class ChatMessage {
        return chatMessage;
     }
 
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
+    }
 
     public String getId() {
         return id;

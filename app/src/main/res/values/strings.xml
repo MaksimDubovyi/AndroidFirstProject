@@ -75,6 +75,7 @@
 
     <!--RentCar-->
     <string name="main_btn_rent_car">Rent Car 2023</string>
+    <string name="choice_btn_rent_car">Оберіть авто</string>
     <!--endregion-->
 
 
